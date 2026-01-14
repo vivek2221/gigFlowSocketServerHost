@@ -8,6 +8,7 @@ import Auth from './endPoints/auth.js'
 import cookieParser from "cookie-parser";
 import { ModelMessages, ModelSid } from "./mongoose/mongooseValidationPlusModelCreation.js";
 const server=express()
+const PORT = process.env.PORT || 10000;
 server.use(cors({
     origin:process.env.FRONTEND_URL,
     credentials:true
@@ -24,6 +25,6 @@ server.get('/api/messages',auth,async(req,res)=>{
     const data=await ModelMessages.find({to:id.someId})
     res.status(200).json(data)
 })
-server.listen(2000,process.env.HOST_MAIN_SERVER,()=>{
-    console.log(`server started on port ${process.env.PORT_MAIN_SERVER}`)
+server.listen(PORT,'0.0.0.0',()=>{
+    console.log(`server started on port ${PORT}`)
 })
