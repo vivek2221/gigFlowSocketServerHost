@@ -2,11 +2,11 @@
   "name": "server",
   "version": "1.0.0",
   "description": "",
-  "main": "socket.js",
+  "main": "express.js",
   "type": "module",
   "scripts": {
-    "start": "node  socket.js",
-    "dev": "node --watch  socket.js"
+    "start": "node  express.js",
+    "dev": "node --watch  express.js"
   },
   "keywords": [],
   "author": "",
