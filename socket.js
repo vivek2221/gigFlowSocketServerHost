@@ -57,7 +57,7 @@ io.on('connection', (socket) => {
         }
     })
 })
-const PORT =  10000;
-httpServer.listen(PORT, () => {
+const PORT = process.env.PORT || 10000;
+httpServer.listen(PORT,() => {
     console.log(`Server is running on http://${process.env.WEBSOCKETHOST}:${PORT}`)
 })
