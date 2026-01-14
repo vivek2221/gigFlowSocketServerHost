@@ -18,7 +18,6 @@ const io = new Server(httpServer,{
 })
 io.use(async (socket, next) => {
     const header = socket.handshake.headers.cookie
-    console.log("Cookies received:", header)
     if (!header) {
         return next(new Error("Authentication error: No cookies found"))
     }
